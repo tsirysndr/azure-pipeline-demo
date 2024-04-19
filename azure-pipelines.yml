@@ -10,23 +10,17 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '18.x'
-  displayName: 'Install Node.js'
-
-- task: Npm@1
-  displayName: setup bun
-  inputs:
-    command: 'custom'
-    customCommand: 'install -g bun'
-    verbose: true
+- script: |
+    curl -fsSL https://deno.land/install.sh | sh
+    export PATH=$HOME/.deno/bin:$PATH
+    deno install -A -r https://cli.fluentci.io -n fluentci
+  displayName: 'Setup FluentCI'
 
 - script: |
-    bun install
-    bun test
+    fluentci run --wasm bun install
+    fluentci run --wasm bun test
   displayName: 'npm install and test'
 
 - script: |
-    bun run build
+    fluentci run --wasm bun run build
   displayName: 'Run build'
