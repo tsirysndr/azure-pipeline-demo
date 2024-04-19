@@ -14,6 +14,8 @@ steps:
     curl -fsSL https://deno.land/install.sh | sh
     export PATH=$HOME/.deno/bin:$PATH
     deno install -A -r https://cli.fluentci.io -n fluentci
+    fluentci --version
+    echo "##vso[task.prependpath]${HOME}/.deno/bin"
   displayName: 'Setup FluentCI'
 
 - script: |
