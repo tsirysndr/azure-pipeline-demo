@@ -21,7 +21,7 @@ steps:
 - script: |
     fluentci run --wasm bun install
     fluentci run --wasm bun test
-  displayName: 'npm install and test'
+  displayName: 'bun install and test'
 
 - script: |
     fluentci run --wasm bun run build
