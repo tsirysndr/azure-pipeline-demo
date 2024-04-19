@@ -1,5 +1,7 @@
 # example
 
+[![Build Status](https://dev.azure.com/tsirysndr/fluentci/_apis/build/status%2Ftsirysndr.azure-pipeline-demo?branchName=main)](https://dev.azure.com/tsirysndr/fluentci/_build/latest?definitionId=1&branchName=main)
+
 To install dependencies:
 
 ```bash
