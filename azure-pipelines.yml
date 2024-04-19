@@ -11,7 +11,7 @@ pool:
 
 steps:
 - script: |
-    curl -fsSL https://cli.fluentci.io | sh
+    curl -fsSL https://cli.fluentci.io | bash
     fluentci --version
     echo "##vso[task.prependpath]${HOME}/.deno/bin"
   displayName: 'Setup FluentCI'
